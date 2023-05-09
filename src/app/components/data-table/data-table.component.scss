@@ -14,6 +14,7 @@ table {
   border-bottom: 1px solid #bdc3c7;
 }
 
+/* Styles paginator component */
 ::ng-deep .mat-mdc-paginator {
   display: flex !important;
   justify-content: end;
@@ -27,4 +28,21 @@ table {
   padding: 5px;
   background-color: #E5E7E9;
   border-radius: 30px;
+}
+
+/* Styles snackbar component */
+::ng-deep .mdc-snackbar__surface {
+  background-color: #ECFDF3!important;
+}
+
+::ng-deep .mdc-snackbar__label {
+  color: #00D26A!important;
+  font-weight: 500!important;
+  font-size: 13px!important;
+}
+
+::ng-deep .mdc-button__label {
+  color: #000!important;
+  font-size: 13px!important;
+
 }

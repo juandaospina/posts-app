@@ -6,17 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './containers/layout/layout.component';
-import { ComponentsModule } from './components/components.module';
-import { HomeComponent } from './pages/home/home.component';
-import { AddPostComponent } from './pages/add-post/add-post.component';
-
+import { PagesModule } from './pages/pages.module';
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LayoutComponent, AddPostComponent],
+  declarations: [AppComponent, LayoutComponent],
   imports: [
     AppRoutingModule,
     BrowserModule,
-    ComponentsModule,
     HttpClientModule,
+    PagesModule
   ],
   providers: [],
   bootstrap: [AppComponent],
