@@ -5,10 +5,13 @@ import { MatTableModule } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { ToolbarComponent, FooterComponent, DataTableComponent } from '.';
+import { DataTableComponent, CardInfoComponent } from '.';
 
 @NgModule({
-  declarations: [ToolbarComponent, FooterComponent, DataTableComponent],
+  declarations: [
+    DataTableComponent,
+    CardInfoComponent,
+  ],
   imports: [
     CommonModule,
     MatTableModule,
@@ -16,6 +19,9 @@ import { ToolbarComponent, FooterComponent, DataTableComponent } from '.';
     BrowserAnimationsModule,
     MatSnackBarModule,
   ],
-  exports: [ToolbarComponent, FooterComponent, DataTableComponent],
+  exports: [
+    DataTableComponent,
+    CardInfoComponent,
+  ],
 })
 export class ComponentsModule {}

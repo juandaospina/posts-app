@@ -8,10 +8,10 @@ import { Post } from 'src/types/post';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  // Dependencies
+  constructor(private postService: PostService) {}
   // Properties
   public posts: Post[] = [];
-
-  constructor(private postService: PostService) {}
 
   ngOnInit(): void {
     this.postService.getAllPost().subscribe({

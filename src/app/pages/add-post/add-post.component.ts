@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { PostService } from 'src/app/services/post.service';
-import { Post } from 'src/types/post';
 
 @Component({
   selector: 'app-add-post',
@@ -24,7 +23,6 @@ export class AddPostComponent {
     }
     return this._postService.create(form.value).subscribe({
       next: (response) => {
-        console.log("[create_response]", response)
         if (typeof response === "object") {
           this._snackBar.open('✅  Post creado con éxito', 'Cerrar', {
             horizontalPosition: 'right',

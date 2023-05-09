@@ -3,7 +3,6 @@ import {
   Component,
   ViewChild,
   Input,
-  ElementRef
 } from '@angular/core';
 import { MatTableDataSource, MatTable } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
@@ -18,13 +17,13 @@ import { Post } from 'src/types/post';
   styleUrls: ['./data-table.component.scss'],
 })
 export class DataTableComponent implements AfterViewInit {
+  // ↓ Dependencies
   constructor(
     private _postService: PostService,
     private _snackBar: MatSnackBar,
-    private _elementRef: ElementRef
   ) {}
 
-  // Properties
+  // ↓ Properties
   @Input() public posts!: Post[];
   @Input() set data(results: Post[]) {
     if (results) {
@@ -50,6 +49,7 @@ export class DataTableComponent implements AfterViewInit {
     this.dataSource.paginator = this.paginator;
   }
 
+  /* This method delete a post, it is necessary to send the post id */
   public deletePost(): void {
     if (this.id === null) return;
     this._postService.delete(this.id).subscribe({
@@ -72,6 +72,7 @@ export class DataTableComponent implements AfterViewInit {
     });
   }
 
+  /* This method updates a post, it is necessary to send the entire post */
   public updatePost(): void {
     this._postService.update(this.post).subscribe({
       next: (response) => {
@@ -90,6 +91,9 @@ export class DataTableComponent implements AfterViewInit {
     })
   }
 
+  /* 
+    ↓ These methods control the delete and update actions of the modals
+  */
   private closeModal(action: string) {
     let modal;
     if (action === 'delete') {

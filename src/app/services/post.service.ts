@@ -27,13 +27,11 @@ export class PostService {
 
   /* Create a new post, receiving the userId, title and body */
   public create({ userId, title, body }: Partial<Post>) {
-    console.log("[create]", { userId, title, body})
     return this._http.post(`${environment.baseUrl}/posts`, { userId, title, body });
   }
 
   /* Update a exist post */
   public update({ id, userId, title, body }: Post): Observable<Post> {
-    console.log("[update]", { id, userId, title, body})
     return this._http.put<Post>(`${environment.baseUrl}/posts/${id}`, { id, userId, title, body });
   }
 }
