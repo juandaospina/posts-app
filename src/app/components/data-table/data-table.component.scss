@@ -1,0 +1,30 @@
+table {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bdc3c7;
+  border-radius: 10px!important;
+}
+
+.mat-elevation-z8 {
+  box-shadow: none;
+}
+
+.mdc-data-table__header-cell,
+.mdc-data-table__cell {
+  border-bottom: 1px solid #bdc3c7;
+}
+
+::ng-deep .mat-mdc-paginator {
+  display: flex !important;
+  justify-content: end;
+  padding: 10px;
+  background: transparent;
+}
+
+::ng-deep .mat-mdc-paginator-outer-container {
+  width: 50%;
+  margin-top: 10px;
+  padding: 5px;
+  background-color: #E5E7E9;
+  border-radius: 30px;
+}
