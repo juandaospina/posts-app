@@ -1,1 +1,42 @@
-<p>add-post works!</p>
+<div class="container-add-post">
+  <form #form="ngForm" (submit)="onSubmit(form)">
+    <fieldset>
+      <legend>Crea un nuevo post</legend>
+      <label>No. usuario <small>(Requerido)</small></label>
+      <select
+        class="form-select"
+        [classList]=""
+        id="selectUser"
+        name="userId"
+        ngModel
+        #userId="ngModel"
+        required
+      >
+        <option selected>Selecciona un usuario</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+
+      <label>Título <small>(Requerido)</small></label>
+      
+      <input
+        class="form-control"
+        type="text"
+        name="title"
+        ngModel
+        #title="ngModel"
+        min="2"
+        max="20"
+        required
+      />
+
+      <label>Contenido <small>(Requerido)</small></label>
+      <textarea class="form-control" name="body" ngModel #body="ngModel" required>
+      </textarea>
+      
+      <button type="submit" class="btn btn-primary">Enviar información</button>
+    </fieldset>
+
+  </form>
+</div>

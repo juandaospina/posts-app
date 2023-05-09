@@ -1,0 +1,30 @@
+.container-add-post {
+  margin: 0 auto;
+  width: 70%;
+  padding: 2em;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Styles snackbar component */
+::ng-deep .mdc-snackbar__surface {
+  background-color: #FFF!important;
+}
+
+::ng-deep .mdc-snackbar__label {
+  color: #000!important;
+  font-weight: 500!important;
+  font-size: 13px!important;
+}
+
+::ng-deep .mdc-button__label {
+  color: #000!important;
+  font-size: 13px!important;
+
+}
