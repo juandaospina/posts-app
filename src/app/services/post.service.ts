@@ -11,7 +11,17 @@ import { Post } from 'src/types/post';
 export class PostService {
   constructor(private _http: HttpClient) {}
 
+  /*
+    ↓ These methods allow read and execute actions in /posts API
+  */
+
+  /* Get all posts */
   public getAllPost(): Observable<Post[]> {
     return this._http.get<Post[]>(`${environment.baseUrl}/posts`);
+  }
+
+  /* Delete one post receiving its id */
+  public delete(id: number) {
+    return this._http.delete(`${environment.baseUrl}/posts/${id}`);
   }
 }
